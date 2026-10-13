@@ -10,7 +10,7 @@ export type Article = {
 };
 
 export const articles: Article[] = [
-  { slug: "best-budget-smartphones", category: "Buying guides", title: "Best budget smartphones worth buying in 2026", description: "A practical shortlist for great everyday performance, battery life and cameras.", readTime: "8 min read", visual: "mint" },
+  { slug: "best-budget-smartphones", category: "Buying guides", title: "How to choose a budget smartphone in 2026", description: "A practical way to find the right balance of battery, camera, performance and support.", readTime: "8 min read", visual: "mint" },
   { slug: "android-vs-iphone", category: "Comparisons", title: "Android vs. iPhone: which one fits your life?", description: "The differences that matter after the excitement of unboxing fades.", readTime: "7 min read", visual: "blue" },
   { slug: "make-phone-battery-last", category: "Phone tips", title: "How to make your phone battery last longer", description: "Simple settings and habits that make a real difference every day.", readTime: "5 min read", visual: "sky" },
   { slug: "refurbished-phone-guide", category: "Buying guides", title: "Is a refurbished phone a smart buy?", description: "How to spot a reliable deal, understand warranties and avoid common traps.", readTime: "6 min read", visual: "ink" },
