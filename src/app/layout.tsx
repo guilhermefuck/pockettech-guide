@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     template: "%s | PocketTech Guide",
   },
   description: "Friendly smartphone buying guides, honest comparisons, and practical technology advice.",
+  verification: { google: "_XMPg-BIMmGrnh_ZNsIu-1bNPiXj5rSELqGT4YCdpA8" },
   openGraph: {
     type: "website",
     locale: "en_US",
