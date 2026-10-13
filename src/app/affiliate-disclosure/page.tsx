@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Affiliate Disclosure", description: "How affiliate links and recommendations work at PocketTech Guide." };
+
+export default function AffiliateDisclosurePage() {
+  return <main className="article-page"><header><p className="eyebrow">TRANSPARENCY</p><h1>Affiliate Disclosure</h1><p className="article-dek">How PocketTech Guide may earn money while keeping recommendations independent.</p></header><div className="article-body"><p>PocketTech Guide may earn a commission when you buy through selected links on this website. This comes at no extra cost to you.</p><h2>Our editorial standard</h2><p>A potential commission never decides whether we recommend a product. We focus on practical fit, value, software support, real-world usability and the trade-offs a buyer should know before spending money.</p><h2>What this means for you</h2><p>We will clearly identify affiliate links where appropriate. We do not accept payment in exchange for a positive opinion, and we do not create rankings simply because a product pays a higher commission.</p><h2>Our goal</h2><p>Affiliate income can help support research, writing and the ongoing cost of running the site. Trust is more valuable than a short-term sale, so we aim to make every recommendation useful whether or not you choose to buy anything.</p></div></main>;
+}
