@@ -1,69 +1,15 @@
-import Image from "next/image";
+const guides = [
+  { category: "Buying guides", title: "Best budget smartphones worth buying in 2026", description: "The features that matter, the trade-offs to avoid, and the phones we would shortlist first.", tone: "coral" },
+  { category: "Phone tips", title: "How to make your phone battery last longer", description: "Practical settings that save power without making your phone frustrating to use.", tone: "blue" },
+  { category: "Explainers", title: "What does a flagship phone really get you?", description: "A clear look at cameras, screens, performance, and whether the upgrade is worthwhile.", tone: "yellow" },
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <main>
+    <nav className="site-nav" aria-label="Main navigation"><a className="brand" href="#top" aria-label="PocketTech Guide home"><span className="brand-mark">P</span><span>PocketTech <b>Guide</b></span></a><div className="nav-links"><a href="#guides">Buying guides</a><a href="#tips">Phone tips</a><a href="#about">About</a></div></nav>
+    <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">TECH MADE CLEAR</p><h1>Find the right tech <em>without</em> the noise.</h1><p className="hero-text">Friendly buying guides, phone tips, and honest explainers for people who want technology to simply work.</p><a className="button" href="#guides">Explore the guides <span aria-hidden="true">→</span></a></div><div className="hero-art" aria-hidden="true"><div className="sun" /><div className="phone"><div className="camera" /><div className="phone-screen"><span>PT</span><i /><b /></div></div><div className="spark one">✦</div><div className="spark two">✦</div></div></section>
+    <section className="latest" id="guides"><div className="section-heading"><div><p className="eyebrow">START HERE</p><h2>Useful reads, not endless specs.</h2></div><a href="#about">See all articles <span aria-hidden="true">→</span></a></div><div className="guide-grid">{guides.map((guide, index) => <article className="guide-card" key={guide.title} id={index === 1 ? "tips" : undefined}><div className={`card-visual ${guide.tone}`}><span>{index === 0 ? "⌁" : index === 1 ? "☼" : "✦"}</span></div><p className="card-category">{guide.category}</p><h3>{guide.title}</h3><p>{guide.description}</p><a href="#about" aria-label={`Read ${guide.title}`}>Read guide <span aria-hidden="true">→</span></a></article>)}</div></section>
+    <section className="promise" id="about"><p className="eyebrow">OUR PROMISE</p><h2>We make recommendations like we are helping a friend spend their own money.</h2><p>No jargon, no hype, and no pretending every new gadget is essential.</p></section>
+    <footer><span>© 2026 PocketTech Guide</span><span>Simple tech decisions start here.</span></footer>
+  </main>;
 }
