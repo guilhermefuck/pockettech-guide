@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/components/site";
@@ -106,7 +107,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <h1>{article.title}</h1>
       <p className="article-dek">{article.description}</p>
     </header>
-    <div className={`article-hero ${article.visual}`}><span>{article.category === "Comparisons" ? "↔" : article.category === "Phone tips" ? "✦" : "⌁"}</span></div>
+    <div className={`article-hero ${article.visual}`}><Image src={`/images/articles/${article.slug}.png`} alt="" fill priority sizes="(max-width: 800px) 100vw, 800px" className="article-cover" /></div>
     <div className="article-body">
       <p>{content.intro}</p>
       {content.sections.map((section) => <section key={section.heading}>

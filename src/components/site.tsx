@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export type Article = {
@@ -27,5 +28,5 @@ export function Footer() {
 }
 
 export function ArticleCard({ article, featured = false }: { article: Article; featured?: boolean }) {
-  return <article className={`article-card ${featured ? "featured" : ""}`}><Link href={`/articles/${article.slug}`} className={`article-visual ${article.visual}`} aria-label={`Read ${article.title}`}><span>{article.category === "Comparisons" ? "↔" : article.category === "Phone tips" ? "✦" : "⌁"}</span></Link><div className="article-content"><p className="card-category">{article.category}<span>•</span>{article.readTime}</p><h3><Link href={`/articles/${article.slug}`}>{article.title}</Link></h3><p>{article.description}</p><Link className="text-link" href={`/articles/${article.slug}`}>Read article <span aria-hidden="true">→</span></Link></div></article>;
+  return <article className={`article-card ${featured ? "featured" : ""}`}><Link href={`/articles/${article.slug}`} className={`article-visual ${article.visual}`} aria-label={`Read ${article.title}`}><Image src={`/images/articles/${article.slug}.png`} alt="" fill sizes="(max-width: 760px) 100vw, 33vw" className="article-cover" /></Link><div className="article-content"><p className="card-category">{article.category}<span>•</span>{article.readTime}</p><h3><Link href={`/articles/${article.slug}`}>{article.title}</Link></h3><p>{article.description}</p><Link className="text-link" href={`/articles/${article.slug}`}>Read article <span aria-hidden="true">→</span></Link></div></article>;
 }
