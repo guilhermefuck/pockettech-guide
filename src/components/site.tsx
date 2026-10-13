@@ -23,7 +23,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="site-footer"><Link className="brand" href="/"><span className="brand-mark">P</span><span>PocketTech <b>Guide</b></span></Link><p>Smart choices. Clear answers.</p><span>© 2026 PocketTech Guide</span></footer>;
+  return <footer className="site-footer"><Link className="brand" href="/"><span className="brand-mark">P</span><span>PocketTech <b>Guide</b></span></Link><div className="footer-links"><Link href="/about">About</Link><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link><Link href="/affiliate-disclosure">Disclosure</Link></div><span>© 2026 PocketTech Guide</span></footer>;
 }
 
 export function ArticleCard({ article, featured = false }: { article: Article; featured?: boolean }) {
