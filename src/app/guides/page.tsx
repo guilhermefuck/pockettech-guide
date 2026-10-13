@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { ArticleCard, articles } from "@/components/site";
+export const metadata: Metadata = { title: "Buying Guides | PocketTech Guide", description: "Practical smartphone buying guides with clear recommendations." };
+export default function GuidesPage() { const guides = articles.filter((article) => article.category === "Buying guides" || article.category === "Explainers"); return <main className="page-shell"><section className="page-intro"><p className="eyebrow">BUYING GUIDES</p><h1>Spend smarter on the tech you use every day.</h1><p>Clear recommendations, honest trade-offs, and the details worth checking before you buy.</p></section><section className="article-grid">{guides.map((article) => <ArticleCard article={article} key={article.slug} />)}</section></main>; }
